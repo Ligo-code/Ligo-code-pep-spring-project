@@ -46,8 +46,7 @@ public class MessageService {
         return 0;//record not found
     } 
     
-    public int updateMessage(Integer messageId, String newMessageText) {
-        // check valid new text
+    public int updateMessage(Integer messageId, String newMessageText) {        
         if (newMessageText == null || newMessageText.trim().isEmpty()) {
             return 0;
         }
@@ -63,7 +62,7 @@ public class MessageService {
         }
         return 0; //record not found
     }
-    
+
     public List<Message> getMessagesByUserId(Integer accountId) {
         return messageRepository.findByPostedBy(accountId);
     }
